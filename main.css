@@ -1,0 +1,41 @@
+/******************************
+      C O N T A I N E R
+******************************/
+*{box-sizing:border-box;
+/*background:rgba(0,0,0,.25);*/
+}
+
+
+.container{position:relative; width:560px; height:575px; padding:15px;margin:0 auto;  border-radius:6px;
+ /*background:rgba(0,0,200,.1);*/ background:#323e46;
+box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
+display:flex; justify-content:center; align-items:center;
+  flex-direction:column;
+}
+.director{height:100%; width:100%; 
+}
+span{box-shadow: inset 10px -15px 37px -1px rgba(0,0,0,0.76);}
+.movie{
+  box-shadow: inset 10px -15px 37px -1px rgba(0,0,0,0.76);
+ position:absolute; bottom:0; display:flex; justify-content:center; align-items:baseline; flex-direction:row;
+transition:200ms ease-in-out; cursor:pointer;}
+.movie:hover{transform:scale(.99); transition:200ms ease-in-out;}
+.movie img{height:150px; width:100px; transition:200ms ease-in-out;
+}
+img{border-radius:2px;}
+.movie img:hover{transform:scale(1.1);}
+.btn-purple{width:35px; height:150px; background:gold;}
+/******************************
+           L O G O 
+******************************/
+.hollywood{cursor:pointer; color:white; font-family: 'Graduate', cursive; transform:scale(1.5); display:flex; justify-content:center; align-items:center; position:absolute; top:0; left:0; margin-left: 40px; margin-top:15px; width:130px; list-style-type:none; padding:10px; /*background:rgba(0,0,200,.1);*/
+}
+.hollywood:hover li:nth-child(2n){margin-bottom:3px; transition:300ms ease-in-out;
+}
+.hollywood li:nth-child(2n){ margin-bottom:0px; transition:300ms ease-in-out;
+}
+/******************************
+          N A M E S 
+******************************/
+#wesAnderson{background:url(https://67.media.tumblr.com/33104c35c9d677d445c103d9cb96927a/tumblr_og3rm3K2831sj6gx1o1_540.jpg)center no-repeat; box-shadow: inset 0px 100px 220px 70px rgba(0,0,0,.75);
+}/*https://65.media.tumblr.com/8979356c6e72b87eaefe99fc4178533a/tumblr_og3rl9HGOr1sj6gx1o1_540.jpg*/
