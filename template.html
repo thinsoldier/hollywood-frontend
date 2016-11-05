@@ -43,6 +43,19 @@
 						</div>
 					</span>
 				</div>
+				
+				<?php 
+				foreach( $data1['folders'] as $directorToken) { 
+					// remove dashes from name
+					$directorName = str_replace('-',' ', $directorToken);
+					// capitalize name
+					$directorName = ucwords($directorName);
+				?>
+				<div class="director" id="<?php echo $directorToken; ?>">
+					Another director &lt;div&gt; for <?php echo $directorName; ?>
+				</div>
+				<? } ?>
+				
 			</div><!--container-->
 		</div>
 	</body>
