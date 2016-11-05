@@ -9,7 +9,6 @@ box-sizing: border-box;
 .container {
 position: relative;
 width: 560px;
-height: 575px;
 padding: 15px;margin: 0 auto;  border-radius: 6px;
 background: #323e46;
 box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
@@ -20,51 +19,68 @@ flex-direction: column;
 }
 
 .director {
-height: 100%;
+position: relative;
 width: 100%;
+margin-bottom: 1em;
+
+/* this box shadow caused major frame rate drop when scrolling long pages */
+/* box-shadow: inset 0px 100px 220px 70px rgba(0,0,0,.75); */
 }
 
-span {
-box-shadow: inset 10px -15px 37px -1px rgba(0,0,0,0.76);
+.director:hover {
+z-index: 1;
 }
 
-.movie {
-box-shadow: inset 10px -15px 37px -1px rgba(0,0,0,0.76);
+.director-name {
+font-size: 36px;
+color: #fff;
+text-shadow: 1px 1px 2px black;
 position: absolute;
-bottom: 0;
+bottom: 160px;
+left: 20px;
+}
+
+.director-photo-wrap {
+min-height: 275px;
+}
+
+.director-photo {
+width: 100%;
+display: block;
+}
+
+.movie-list {
+box-shadow: inset 10px -15px 37px -1px rgba(0,0,0,0.76);
 display: flex;
 justify-content: center;
 align-items: baseline;
 flex-direction: row;
 transition: 200ms ease-in-out;
 cursor: pointer;
+min-height: 150px;
 }
 
-.movie:hover {
+.movie-list:hover {
 transform: scale(.99);
 transition: 200ms ease-in-out;
 }
 
-.movie img {
-height: 150px;
-width: 100px;
-transition: 200ms ease-in-out;
+.movie-list-item {
+width: 20%;
 }
 
-img {
+.movie-list-item img {
+display: block;
+height: auto;
+max-height: 150px;
+width: 100%;
+transition: 200ms ease-in-out;
 border-radius: 2px;
 }
 
-.movie img:hover {
+.movie-list-item img:hover {
 transform: scale(1.1);
 }
-
-.btn-purple {
-width: 35px;
-height: 150px;
-background: gold;
-}
-
 
 /******************************
            L O G O
@@ -77,11 +93,9 @@ transform: scale(1.5);
 display: flex;
 justify-content: center;
 align-items: center;
-position: absolute;
 top: 0;
 left: 0;
-margin-left: 40px;
-margin-top: 15px;
+margin:0 auto;
 width: 130px;
 list-style-type: none;
 padding: 10px;
@@ -95,13 +109,4 @@ transition: 300ms ease-in-out;
 .hollywood li:nth-child(2n) {
 margin-bottom: 0px;
 transition: 300ms ease-in-out;
-}
-
-
-/******************************
-          N A M E S
-******************************/
-#wesAnderson {
-background: url(https://67.media.tumblr.com/33104c35c9d677d445c103d9cb96927a/tumblr_og3rm3K2831sj6gx1o1_540.jpg)center no-repeat;
-box-shadow: inset 0px 100px 220px 70px rgba(0,0,0,.75);
 }

@@ -20,39 +20,26 @@
 					<li>o</li>
 					<li>d</li>
 				</ul>
-				<div class="director" id="wesAnderson">
-					<span> <!-- TODO: inline elements (span) should not wrap block elements (div) -->
-						<div class="movie">
-							<div>
-								<img src="https://66.media.tumblr.com/6d7e692a3903b2e6a0354687108196dd/tumblr_og3u377hdj1sj6gx1o5_400.jpg">
-							</div>
-							<div>
-								<img src="https://67.media.tumblr.com/faffd9694abab381e2596de05ff459b0/tumblr_og3voi7ufY1sj6gx1o1_540.jpg">
-							</div>
-							<div>
-								<img src="https://66.media.tumblr.com/8c438f4dc3ae6c2ca8a11109034e7acf/tumblr_og3u377hdj1sj6gx1o4_400.png">
-							</div>
-							<div>
-								<img src="https://67.media.tumblr.com/f253aaaad6b7561d2e6562d8ad90b3d7/tumblr_og3u377hdj1sj6gx1o2_400.jpg">
-							</div>
-							<div>
-								<img src="https://66.media.tumblr.com/4331942462aa365c7b81114c660213cc/tumblr_og3u377hdj1sj6gx1o3_250.jpg">
-							</div>
-							<div class="btn-purple">
-							</div>
-						</div>
-					</span>
-				</div>
 				
-				<?php 
-				foreach( $dataRootRaw['folders'] as $directorToken) { 
-					// remove dashes from name
-					$directorName = str_replace('-',' ', $directorToken);
-					// capitalize name
-					$directorName = ucwords($directorName);
+				<?php
+				foreach( $dataParsed as $directorData) { 
 				?> 
-				<div class="director" id="<?php echo $directorToken; ?>">
-					Another director &lt;div&gt; for <?php echo $directorName; ?> 
+				<div class="director <? echo $directorData['token']?>">
+					<div class="director-name">
+						<? echo $directorData['name']?>
+					</div>
+					<div class="director-photo-wrap">
+						<img class="director-photo" src="<? echo $directorData['photo']?>">
+					</div>
+					<div class="movie-list">
+						<?php
+						foreach( $directorData['movies'] as $movie) { 
+						?> 
+						<div class="movie-list-item">
+							<img title="<? echo $movie['name']?>" src="<? echo $movie['poster']?>">
+						</div>
+						<? } ?>
+					</div>
 				</div>
 				<? } ?>
 				
