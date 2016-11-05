@@ -70,7 +70,6 @@ function _parseDirectorData( $directorToken )
 }
 
 $dataRootRaw = _listDirectoryContents('./data/');
-showme($dataRootRaw, 'Contents in root of data folder:');
 
 $dataParsed = array();
 foreach( $dataRootRaw['folders'] as $directorToken )
@@ -78,7 +77,16 @@ foreach( $dataRootRaw['folders'] as $directorToken )
 	$dataParsed[ $directorToken ] = _parseDirectorData( $directorToken );
 }
 
-showme($dataParsed, 'Data from parsing all director folders within data folder:');
+//-----------------------------
 
 include('template.html');
+
+//-----------------------------
+
+showme($dataRootRaw, 'Contents in root of data folder:');
+showme($dataParsed, 'Data from parsing all director folders within data folder:');
+
+
+
+
 ?>
